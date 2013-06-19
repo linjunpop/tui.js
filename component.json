@@ -1,0 +1,13 @@
+{
+  "name": "tui",
+  "version": "0.0.1",
+  "main": "build/tui.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "devDependencies": {
+    "mocha": "latest"
+  }
+}
