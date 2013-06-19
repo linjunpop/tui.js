@@ -10,6 +10,7 @@
     function TuiKit(projectID, projectSecretKey) {
       this.projectID = projectID;
       this.projectSecretKey = projectSecretKey;
+      this.createMessage = __bind(this.createMessage, this);
       this.deleteDevice = __bind(this.deleteDevice, this);
       this.updateDevice = __bind(this.updateDevice, this);
       this.createDevice = __bind(this.createDevice, this);
@@ -46,6 +47,15 @@
 
       resourcePath = "devices/" + deviceToken;
       return this.sendRequest(resourcePath, 'DELETE');
+    };
+
+    TuiKit.prototype.createMessage = function(message) {
+      var resourcePath;
+
+      resourcePath = "messages";
+      return this.sendRequest(resourcePath, 'POST', {
+        "message": message
+      });
     };
 
     TuiKit.prototype.sendRequest = function(resourcePath, type, data) {

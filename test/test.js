@@ -65,4 +65,14 @@ describe('TuiKit', function(){
       assert.equal(client.status, 204)
     })
   })
+
+  describe('#createMessage(message)', function(){
+    var client = tuiKit.createMessage({
+      "alert": "Bazinga"
+    })
+
+    it('return `Created`', function(){
+      assert.equal(client.status, 201)
+    })
+  })
 })

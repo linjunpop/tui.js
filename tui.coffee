@@ -25,6 +25,11 @@ class @TuiKit
 
     @sendRequest(resourcePath, 'DELETE')
 
+  createMessage: (message) =>
+    resourcePath = "messages"
+
+    @sendRequest(resourcePath, 'POST', {"message": message})
+
   sendRequest: (resourcePath, type, data) ->
     client = new XMLHttpRequest()
 
