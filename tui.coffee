@@ -27,10 +27,4 @@ class @TuiKit
 
     client.send(JSON.stringify(data))
 
-    switch client.status
-      when 200
-        alert("The request succeeded!\n\nThe response representation was:\n\n" + client.responseText)
-      when 201
-        alert('Created')
-      else
-        alert("The request did not succeed!\n\nThe response status was: " + client.status + " " + client.statusText + ".");
+    return client

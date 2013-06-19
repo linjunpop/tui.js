@@ -1,17 +1,40 @@
+var assert = chai.assert;
+var expect = chai.expect
+
 describe('TuiKit', function(){
 
   var tuiKit = new TuiKit('515a3f00c9886d056f000001', '13f26c605e80f784d387da3c1a1e8b696a9d626f');
 
   describe('#getGroup(groupName)', function(){
-    it('get Group by name.', function(){
-      tuiKit.getGroup('nammme')
+    var client = tuiKit.getGroup('group1')
+
+    it('return `Success`', function(){
+      assert.equal(client.status, 200)
+    })
+
+    describe('response', function(){
+      var response = JSON.parse(client.response)
+
+      it('Name', function() {
+        expect(response).to.have.property('name').equal('group1')
+      })
     })
   })
 
   describe('#createDevice(device)', function(){
-    it('create Device.', function(){
-      tuiKit.createDevice({
-        "token": "joke"
+    var client = tuiKit.createDevice({
+      "token": "12345678"
+    })
+
+    it('return `Created`', function(){
+      assert.equal(client.status, 201)
+    })
+
+    describe('response', function(){
+      var response = JSON.parse(client.response).device
+
+      it('Token', function() {
+        expect(response).to.have.property('token').equal('12345678')
       })
     })
   })

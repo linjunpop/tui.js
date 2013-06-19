@@ -40,14 +40,7 @@
       client.setRequestHeader("X-Project-ID", this.projectID);
       client.setRequestHeader("X-Project-API-Secret-Key", this.projectSecretKey);
       client.send(JSON.stringify(data));
-      switch (client.status) {
-        case 200:
-          return alert("The request succeeded!\n\nThe response representation was:\n\n" + client.responseText);
-        case 201:
-          return alert('Created');
-        default:
-          return alert("The request did not succeed!\n\nThe response status was: " + client.status + " " + client.statusText + ".");
-      }
+      return client;
     };
 
     return TuiKit;
