@@ -2,12 +2,12 @@
 (function() {
   var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
-  this.TuiKit = (function() {
+  this.Tui = (function() {
     var apiUrl;
 
     apiUrl = "http://api.tui.dev/";
 
-    function TuiKit(projectID, projectSecretKey) {
+    function Tui(projectID, projectSecretKey) {
       this.projectID = projectID;
       this.projectSecretKey = projectSecretKey;
       this.createMessage = __bind(this.createMessage, this);
@@ -17,14 +17,14 @@
       this.getGroup = __bind(this.getGroup, this);
     }
 
-    TuiKit.prototype.getGroup = function(groupName) {
+    Tui.prototype.getGroup = function(groupName) {
       var resourcePath;
 
       resourcePath = "groups/" + groupName;
       return this.sendRequest(resourcePath, 'GET');
     };
 
-    TuiKit.prototype.createDevice = function(device) {
+    Tui.prototype.createDevice = function(device) {
       var resourcePath;
 
       resourcePath = "devices";
@@ -33,7 +33,7 @@
       });
     };
 
-    TuiKit.prototype.updateDevice = function(deviceToken, device) {
+    Tui.prototype.updateDevice = function(deviceToken, device) {
       var resourcePath;
 
       resourcePath = "devices/" + deviceToken;
@@ -42,14 +42,14 @@
       });
     };
 
-    TuiKit.prototype.deleteDevice = function(deviceToken) {
+    Tui.prototype.deleteDevice = function(deviceToken) {
       var resourcePath;
 
       resourcePath = "devices/" + deviceToken;
       return this.sendRequest(resourcePath, 'DELETE');
     };
 
-    TuiKit.prototype.createMessage = function(message) {
+    Tui.prototype.createMessage = function(message) {
       var resourcePath;
 
       resourcePath = "messages";
@@ -58,7 +58,7 @@
       });
     };
 
-    TuiKit.prototype.sendRequest = function(resourcePath, type, data) {
+    Tui.prototype.sendRequest = function(resourcePath, type, data) {
       var client;
 
       client = new XMLHttpRequest();
@@ -71,7 +71,7 @@
       return client;
     };
 
-    return TuiKit;
+    return Tui;
 
   })();
 

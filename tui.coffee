@@ -1,4 +1,4 @@
-class @TuiKit
+class @Tui
 
   # TODO: replace with production URL
   apiUrl = "http://api.tui.dev/"

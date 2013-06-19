@@ -3,10 +3,10 @@ var expect = chai.expect
 
 describe('TuiKit', function(){
 
-  var tuiKit = new TuiKit('515a3f00c9886d056f000001', '13f26c605e80f784d387da3c1a1e8b696a9d626f');
+  var tui = new Tui('515a3f00c9886d056f000001', '13f26c605e80f784d387da3c1a1e8b696a9d626f');
 
   describe('#getGroup(groupName)', function(){
-    var client = tuiKit.getGroup('group1')
+    var client = tui.getGroup('group1')
 
     it('return `Success`', function(){
       assert.equal(client.status, 200)
@@ -22,7 +22,7 @@ describe('TuiKit', function(){
   })
 
   describe('#createDevice(device)', function(){
-    var client = tuiKit.createDevice({
+    var client = tui.createDevice({
       "token": "12345678"
     })
 
@@ -40,7 +40,7 @@ describe('TuiKit', function(){
   })
 
   describe('#updateDevice(deviceToken, device)', function(){
-    var client = tuiKit.updateDevice('12345678', {
+    var client = tui.updateDevice('12345678', {
       "groups": ["group1", "group3"]
     })
 
@@ -59,7 +59,7 @@ describe('TuiKit', function(){
   })
 
   describe('#deleteDevice(deviceToken)', function(){
-    var client = tuiKit.deleteDevice('12345678')
+    var client = tui.deleteDevice('12345678')
 
     it('return `No Content`', function(){
       assert.equal(client.status, 204)
@@ -67,7 +67,7 @@ describe('TuiKit', function(){
   })
 
   describe('#createMessage(message)', function(){
-    var client = tuiKit.createMessage({
+    var client = tui.createMessage({
       "alert": "Bazinga"
     })
 
