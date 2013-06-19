@@ -1,5 +1,7 @@
 # Tui (JavaScript Library)
 
+A JavaScript library for Tui API (https://github.com/linjunpop/tui/wiki/API).
+
 ## Development
 
 ```bash
@@ -10,6 +12,3 @@ $ bower install
 
 Open `test/runner.html`.
 
-### Statue Codes
-
-https://github.com/linjunpop/tui/wiki/Status-codes
