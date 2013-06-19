@@ -20,6 +20,11 @@ class @TuiKit
 
     @sendRequest(resourcePath, 'PUT', {"device": device})
 
+  deleteDevice: (deviceToken) =>
+    resourcePath = "devices/#{deviceToken}"
+
+    @sendRequest(resourcePath, 'DELETE')
+
   sendRequest: (resourcePath, type, data) ->
     client = new XMLHttpRequest()
 

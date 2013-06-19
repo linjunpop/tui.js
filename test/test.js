@@ -44,7 +44,7 @@ describe('TuiKit', function(){
       "groups": ["group1", "group3"]
     })
 
-    it('return `Created`', function(){
+    it('return `Success`', function(){
       assert.equal(client.status, 200)
     })
 
@@ -55,6 +55,14 @@ describe('TuiKit', function(){
         expect(response).to.have.property('groups')
           .to.have.members(["group1", "group3"])
       })
+    })
+  })
+
+  describe('#deleteDevice(deviceToken)', function(){
+    var client = tuiKit.deleteDevice('12345678')
+
+    it('return `No Content`', function(){
+      assert.equal(client.status, 204)
     })
   })
 })
