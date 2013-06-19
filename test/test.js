@@ -38,4 +38,23 @@ describe('TuiKit', function(){
       })
     })
   })
+
+  describe('#updateDevice(deviceToken, device)', function(){
+    var client = tuiKit.updateDevice('12345678', {
+      "groups": ["group1", "group3"]
+    })
+
+    it('return `Created`', function(){
+      assert.equal(client.status, 200)
+    })
+
+    describe('response', function(){
+      var response = JSON.parse(client.response).device
+
+      it('Groups', function() {
+        expect(response).to.have.property('groups')
+          .to.have.members(["group1", "group3"])
+      })
+    })
+  })
 })

@@ -15,6 +15,11 @@ class @TuiKit
 
     @sendRequest(resourcePath, 'POST', {"device": device})
 
+  updateDevice: (deviceToken, device) =>
+    resourcePath = "devices/#{deviceToken}"
+
+    @sendRequest(resourcePath, 'PUT', {"device": device})
+
   sendRequest: (resourcePath, type, data) ->
     client = new XMLHttpRequest()
 
