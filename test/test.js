@@ -13,7 +13,7 @@ describe('TuiKit', function(){
     })
 
     describe('response', function(){
-      var response = JSON.parse(client.response)
+      var response = JSON.parse(client.response).group
 
       it('Name', function() {
         expect(response).to.have.property('name').equal('group1')
