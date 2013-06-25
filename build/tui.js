@@ -64,7 +64,7 @@
       client = new XMLHttpRequest();
       client.open(type, "" + apiUrl + "/" + resourcePath, false);
       client.setRequestHeader("Content-Type", "application/json");
-      client.setRequestHeader("Accept", "application/vnd.tui+json;.version=1");
+      client.setRequestHeader("Accept", "application/vnd.tui+json;version=1");
       client.setRequestHeader("X-Project-ID", this.projectID);
       client.setRequestHeader("X-Project-API-Secret-Key", this.projectSecretKey);
       client.send(JSON.stringify(data));

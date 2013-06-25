@@ -36,7 +36,7 @@ class @Tui
     client.open(type, "#{apiUrl}/#{resourcePath}", false)
 
     client.setRequestHeader("Content-Type", "application/json")
-    client.setRequestHeader("Accept", "application/vnd.tui+json;.version=1")
+    client.setRequestHeader("Accept", "application/vnd.tui+json;version=1")
     client.setRequestHeader("X-Project-ID", @projectID)
     client.setRequestHeader("X-Project-API-Secret-Key", @projectSecretKey)
 
